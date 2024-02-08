@@ -9,9 +9,7 @@ int main() {
 	std::cout << "Starting number comparison...";
 
 	while(true) {
-		std::cout << "\n   Round ";
-		std::cout << rounds + 1;
-		std::cout << ":";
+		std::cout << "\n   Round " << rounds + 1 << ":";
 		std::cout << "\n      Please enter a first value(enter a negative number to quit): ";
 		std::cin >> first;
 
@@ -35,9 +33,7 @@ int main() {
 		}
 	}
 
-	std::cout << "\nYou have completed ";
-	std::cout << rounds;
-	std::cout << " rounds!";
+	std::cout << "\nYou have completed " << rounds << " rounds!";
 
 	return 0;
 }
