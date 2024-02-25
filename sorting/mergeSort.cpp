@@ -14,6 +14,20 @@ void insertionSort(int firstIndex,int lastIndex,int list[]) {
 	}
 }
 
+void mergeSort(int firstIndex,int lastIndex,int list[]) {
+	int length =  lastIndex - firstIndex + 1;
+	int midIndex = (firstIndex + lastIndex) /2;
+
+	if (length > 2) {
+		mergeSort(firstIndex,midIndex,list);
+		mergeSort(midIndex+1,lastIndex,list);
+
+		insertionSort(firstIndex,lastIndex,list);
+	} else if (length == 2) {
+		insertionSort(firstIndex,lastIndex,list);
+	}
+}
+
 int main() {
 	int list[21] = {5,4,9,10,3,2,7,8,11,12,19,20,1,6,13,15,14,16,17,18,21};
 
@@ -23,7 +37,7 @@ int main() {
 
 	std::cout << "\n";
 
-	insertionSort(0,20,list);
+	mergeSort(0,20,list);
 
 	for (int i = 0;i < 21;i++) {
 		std::cout << list[i] << ",";
